@@ -41,6 +41,10 @@ const ProductList = () => {
   }, [productFilters.category])
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [])
+
+  useEffect(() => {
     const categoryFromQuery = searchParams.get('category')
 
     if (!categoryFromQuery) {
@@ -71,7 +75,7 @@ const ProductList = () => {
   }
 
   return (
-    <div className="w-full pb-10 pt-0">
+    <div className="w-full pt-0">
       <Banner image={bannerImage} alt="Products" />
 
       <div className="mt-0 w-full bg-white py-6">

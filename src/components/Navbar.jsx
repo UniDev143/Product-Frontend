@@ -1,10 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
+const PRODUCT_CATEGORIES = [
+  { value: 'Single disk floor scrubbing machine', label: 'Single Disk Floor Scrubbing Machine' },
+  { value: 'janitorial equipments', label: 'Janitorial Equipments' },
+  { value: 'floor cleaning chemicals and equipments', label: 'Floor Cleaning Chemicals and Equipments' },
+  { value: 'ride on scrubber dryer', label: 'Ride On Scrubber Dryer' },
+  { value: 'industrial vacumm cleaner', label: 'Industrial Vacumm Cleaner' },
+  { value: 'walk behind scubber dryer', label: 'Walk Behind Scubber Dryer' },
+]
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false)
 
-  const closeMobileMenu = () => setIsMobileMenuOpen(false)
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+    setIsProductsDropdownOpen(false)
+  }
 
   useEffect(() => {
     if (!isMobileMenuOpen) {
@@ -165,7 +178,34 @@ const Navbar = () => {
 
             <nav className="flex flex-col gap-5 text-lg text-[#1f1f1f]" aria-label="Mobile main navigation">
               <a href="/#top" onClick={closeMobileMenu} className="border-b border-slate-200 pb-2 transition-colors hover:text-[#0996d3]">Home</a>
-              <a href="/#products" onClick={closeMobileMenu} className="border-b border-slate-200 pb-2 transition-colors hover:text-[#0996d3]">Products</a>
+              <div className="border-b border-slate-200 pb-2">
+                <button
+                  type="button"
+                  onClick={() => setIsProductsDropdownOpen((prev) => !prev)}
+                  aria-expanded={isProductsDropdownOpen}
+                  className="flex w-full items-center justify-between text-left transition-colors hover:text-[#0996d3]"
+                >
+                  <span>Products</span>
+                  <svg viewBox="0 0 24 24" className={`h-5 w-5 transition-transform ${isProductsDropdownOpen ? 'rotate-180' : ''}`} aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+
+                {isProductsDropdownOpen && (
+                  <div className="mt-3 ml-1 flex flex-col gap-2 border-l-2 border-[#d8edf8] pl-3 text-[15px]">
+                    {PRODUCT_CATEGORIES.map((category) => (
+                      <a
+                        key={category.value}
+                        href={`/product-list?category=${encodeURIComponent(category.value)}`}
+                        onClick={closeMobileMenu}
+                        className="transition-colors hover:text-[#0996d3]"
+                      >
+                        {category.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
               <a href="/#services" onClick={closeMobileMenu} className="border-b border-slate-200 pb-2 transition-colors hover:text-[#0996d3]">Services</a>
               <a href="/#about" onClick={closeMobileMenu} className="border-b border-slate-200 pb-2 transition-colors hover:text-[#0996d3]">About Us</a>
               <a href="/#contact" onClick={closeMobileMenu} className="border-b border-slate-200 pb-2 transition-colors hover:text-[#0996d3]">Contact Us</a>

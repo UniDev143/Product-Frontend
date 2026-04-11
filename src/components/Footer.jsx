@@ -5,7 +5,7 @@ import LeavesImage from '../assets/LandingPage/Leaves.png'
 const Footer = () => {
   return (
     <footer className="w-full bg-transparent">
-      <section className="border-t-2 border-sky-500 bg-black px-4 py-8 text-white sm:px-6 lg:px-8">
+      <section className="bg-black px-4 py-8 text-white sm:px-6 lg:px-8">
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-5 text-center">
           <h2 className="text-2xl font-black uppercase leading-tight sm:text-4xl">
             Subscribe For Our News Letter!

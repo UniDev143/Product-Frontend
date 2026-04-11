@@ -1,12 +1,41 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useLocation } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import bannerImage from '../assets/ServicePage/HERO (4).png'
 import firstServiceImage from '../assets/ServicePage/Frame 200.png'
 import secondServiceImage from '../assets/ServicePage/Frame 201.png'
 import thirdServiceImage from '../assets/ServicePage/Frame 202 (1).png'
 import { servicesData } from '../data/servicesData'
+import RequestInfoModal from '../components/Product Page components/RequestInfoModal'
+
+const apiClient = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL || '',
+})
 
 const ServicePage = () => {
+  const location = useLocation()
+  const [isRequestInfoOpen, setIsRequestInfoOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [selectedServiceName, setSelectedServiceName] = useState('Service')
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [])
+
+  useEffect(() => {
+    if (!location.hash) {
+      return
+    }
+
+    const targetId = location.hash.replace('#', '')
+    const targetElement = document.getElementById(targetId)
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [location.hash])
+
   const firstServiceHighlights = [
     'Comprehensive Diagnostics: Detailed inspection to identify and resolve issues quickly.',
     'All Types of Machines Covered: From small handheld devices to large industrial-grade machines.',
@@ -29,6 +58,45 @@ const ServicePage = () => {
     'Longevity Guaranteed: Quality parts extend the life of your equipment and prevent future breakdowns.',
   ]
 
+  const serviceSectionIds = ['motor-repairing', 'parts-replacement', 'brush-refiling']
+
+  const openRequestInfo = (serviceName) => {
+    setSelectedServiceName(serviceName)
+    setIsRequestInfoOpen(true)
+  }
+
+  const closeRequestInfo = () => {
+    if (!isSubmitting) {
+      setIsRequestInfoOpen(false)
+    }
+  }
+
+  const handleRequestSubmit = async (formData) => {
+    if (!formData.name || !formData.phone || !formData.email || !formData.issue) {
+      toast.error('Please fill out all fields.')
+      return
+    }
+
+    try {
+      setIsSubmitting(true)
+
+      await apiClient.post('/api/contact', {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        issue: `Service: ${selectedServiceName}\n\n${formData.issue}`,
+      })
+
+      setIsRequestInfoOpen(false)
+      toast.success('Our team has got your question. We will contact you in a while.')
+    } catch (error) {
+      const message = error.response?.data?.message || 'Something went wrong. Please try again.'
+      toast.error(message)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-[#72bfea]">
       <section className="px-4 pt-3 sm:px-6 lg:px-8">
@@ -42,10 +110,14 @@ const ServicePage = () => {
           {servicesData.map((service, index) => {
             const displayImage = index === 0 ? firstServiceImage : index === 1 ? secondServiceImage : thirdServiceImage
             return (
-              <article key={service.title} className="overflow-hidden rounded-none bg-white shadow-[0_10px_30px_rgba(15,64,93,0.16)]">
+              <article
+                key={service.title}
+                id={serviceSectionIds[index]}
+                className="scroll-mt-34 overflow-hidden rounded-none bg-white shadow-[0_10px_30px_rgba(15,64,93,0.16)]"
+              >
                 <div className="grid items-stretch gap-0 lg:grid-cols-[0.7fr_1.3fr]">
                   <div className="bg-[#1f9ad1] p-0">
-                    <div className="relative h-full min-h-[260px] overflow-hidden">
+                    <div className="relative h-full min-h-65 overflow-hidden">
                       <img src={displayImage} alt={service.title} className="h-full w-full object-cover" />
                     </div>
                   </div>
@@ -71,12 +143,13 @@ const ServicePage = () => {
                           ))}
                         </ul>
                         <div className="mt-4 flex flex-wrap gap-3">
-                          <Link
-                            to="/#contact"
+                          <button
+                            type="button"
+                            onClick={() => openRequestInfo(service.title)}
                             className="inline-flex items-center rounded-full bg-black px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
                           >
-                            Back Home
-                          </Link>
+                            Ask About
+                          </button>
                         </div>
                       </>
                     ) : (
@@ -88,12 +161,13 @@ const ServicePage = () => {
                     )}
                     {index !== 2 && (
                       <div className="mt-4 flex flex-wrap gap-3">
-                        <Link
-                          to="/"
+                        <button
+                          type="button"
+                          onClick={() => openRequestInfo(service.title)}
                           className="inline-flex items-center rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
                         >
-                          Back to Home
-                        </Link>
+                          Ask About
+                        </button>
                       </div>
                     )}
                   </div>
@@ -103,6 +177,14 @@ const ServicePage = () => {
           })}
         </div>
       </section>
+
+      <RequestInfoModal
+        product={{ name: selectedServiceName }}
+        isOpen={isRequestInfoOpen}
+        onClose={closeRequestInfo}
+        onSubmit={handleRequestSubmit}
+        isSubmitting={isSubmitting}
+      />
     </div>
   )
 }
