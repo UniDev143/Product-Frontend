@@ -42,20 +42,20 @@ const products = [
 
 const Products = () => {
   return (
-    <section className="w-full bg-[#ececec] py-16">
+    <section className="w-full bg-white py-16">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <h2 className="text-5xl font-black text-black sm:text-6xl">OUR PRODUCTS</h2>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
+        <div className=" grid gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
           {products.map((product, index) => (
             <Link
               key={index}
               to={`/product-list?category=${encodeURIComponent(product.category)}`}
-              className="block h-80 overflow-hidden rounded-xl"
+              className="block h-80 overflow-hidden rounded-[20px] transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:z-10"
             >
-              <img src={product.image} alt={product.alt} className="h-full w-full object-cover " />
+              <img src={product.image} alt={product.alt} className="h-full w-full object-cover rounded-[20px] transition-all duration-300 hover:brightness-110" />
             </Link>
           ))}
         </div>

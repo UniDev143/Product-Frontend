@@ -35,7 +35,7 @@ const ServiceCard = ({ image, title }) => {
 
 const Service = () => {
   return (
-    <section className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <section className="mx-auto w-full max-w-7xl px-4 py-25 sm:px-6 lg:px-8">
       <div>
         <div className="inline-flex items-center gap-3 text-lg font-medium uppercase tracking-wide text-slate-900">
           <svg viewBox="0 0 48 24" className="h-5 w-8" aria-hidden="true">

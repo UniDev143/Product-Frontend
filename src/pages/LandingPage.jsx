@@ -8,12 +8,12 @@ import Feedbacks from '../components/Landing Page components/Feedbacks'
 
 const LandingPage = () => {
   return (
-    <div className="mt-16">
+    <div>
       <div id="top" className="scroll-mt-32 lg:scroll-mt-36">
         <Banner />
       </div>
 
-      <section id="services" className="scroll-mt-32 lg:scroll-mt-36">
+      <section id="services" className="scroll-mt-26 lg:scroll-mt-26">
         <Service />
       </section>
 

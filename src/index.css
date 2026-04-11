@@ -33,3 +33,9 @@ textarea,
 select {
   font: inherit;
 }
+
+#mobile-menu-overlay,
+#mobile-main-nav {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+}

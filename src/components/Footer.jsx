@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import LeavesImage from '../assets/LandingPage/Leaves.png'
 
 const Footer = () => {
   return (
@@ -31,7 +32,7 @@ const Footer = () => {
           <div className="grid gap-10 lg:grid-cols-[1.3fr_1.4fr] lg:items-start">
             <div>
               <h3 className="text-4xl font-black text-white sm:text-5xl">
-                Moral Clean <span className="text-lime-400">❧</span>
+                Moral Clean <img src={LeavesImage} alt="Leaf" className="inline h-10 w-10" />
               </h3>
               <p className="mt-8 max-w-md text-sm leading-7 text-white/95 sm:text-base">
                 At Moral Clean, we specialize in providing top-quality commercial cleaning products
