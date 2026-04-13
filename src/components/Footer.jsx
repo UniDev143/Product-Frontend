@@ -32,7 +32,9 @@ const Footer = () => {
           <div className="grid gap-10 lg:grid-cols-[1.3fr_1.4fr] lg:items-start">
             <div>
               <h3 className="text-4xl font-black text-white sm:text-5xl">
-                Moral Clean <img src={LeavesImage} alt="Leaf" className="inline h-10 w-10" />
+                <a className="inline-flex items-center gap-2" href="/#top" aria-label="Go to top of home page">
+                  Moral Clean <img src={LeavesImage} alt="Leaf" className="inline h-10 w-10" />
+                </a>
               </h3>
               <p className="mt-8 max-w-md text-sm leading-7 text-white/95 sm:text-base">
                 At Moral Clean, we specialize in providing top-quality commercial cleaning products
@@ -47,14 +49,7 @@ const Footer = () => {
                 <a className="block transition hover:opacity-80" href="/#top">Home</a>
                 <a className="block transition hover:opacity-80" href="/#products">Product</a>
                 <Link className="block transition hover:opacity-80" to="/services">Services</Link>
-                <a className="block transition hover:opacity-80" href="/#contact">Contect Us</a>
-              </div>
-
-              <div className="space-y-4 text-base text-black">
-                <a className="block transition hover:opacity-80" href="#jobs">Jobs</a>
-                <a className="block transition hover:opacity-80" href="#partners">Partners</a>
-                <a className="block transition hover:opacity-80" href="#privacy">Privacy</a>
-                <a className="block transition hover:opacity-80" href="#terms">Term of Use</a>
+                <a className="block transition hover:opacity-80" href="/#contact">Contact Us</a>
               </div>
 
               <div className="space-y-4 text-base text-black">
@@ -79,7 +74,7 @@ const Footer = () => {
           </div>
 
           <div className="mt-14 border-t border-white/60 pt-6 text-center text-sm text-white">
-            Copyright © 2024 Moral Clean. All Rights Reserved.
+            Copyright © 2026 Moral Clean. All Rights Reserved.
           </div>
         </div>
       </section>

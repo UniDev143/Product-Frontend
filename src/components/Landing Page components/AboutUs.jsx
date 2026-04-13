@@ -3,36 +3,37 @@ import aboutImage from '../../assets/LandingPage/Picture.png'
 
 const AboutUs = () => {
   return (
-    <section className="w-full bg-transparent px-4 py-14 sm:px-6 lg:px-8">
-      <div className="mx-auto w-full max-w-7xl">
-        <div className="rounded-xl bg-black py-4 text-center shadow-[0_8px_24px_rgba(0,0,0,0.18)]">
-          <h2 className="text-3xl font-black text-white sm:text-5xl">About Us</h2>
+    <section className="w-full bg-[#73c0e9] px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-5 lg:flex-row lg:items-stretch lg:gap-8">
+        <div className="flex w-full justify-center lg:w-[44%] lg:justify-end">
+          <img
+            src={aboutImage}
+            alt="About us"
+            className="h-auto w-full max-w-110 object-contain drop-shadow-[0_18px_24px_rgba(0,0,0,0.12)] lg:max-w-none lg:self-end"
+          />
         </div>
 
-        <div className="mt-8 grid gap-4 lg:grid-cols-[0.95fr_1.25fr]">
-          <div className="overflow-hidden rounded-xl bg-white shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
-            <img
-              src={aboutImage}
-              alt="About us"
-              className="h-full w-full object-contain p-4 sm:p-6"
-            />
+        <div className="flex w-full flex-col justify-center gap-4 lg:w-[56%] lg:max-w-140">
+          <div className="rounded-md bg-white px-6 py-4 shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:px-8 sm:py-5">
+            <h2 className="text-[36px] font-black leading-none text-black sm:text-[40px]">
+              About Us
+            </h2>
           </div>
 
-          <div className="rounded-xl bg-white px-6 py-8 shadow-[0_8px_24px_rgba(0,0,0,0.12)] sm:px-8 sm:py-10">
-            <h3 className="text-2xl font-black leading-tight text-black sm:text-4xl">
-              We Have 12 Years Of Experience In This Industry
+          <div className="rounded-md bg-white px-6 py-5 shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:px-8 sm:py-6">
+            <h3 className="text-[36px] font-black leading-tight text-black sm:text-[42px]">
+              Meet CEO.
             </h3>
 
-            <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
-              Will reenergize your home and enhance your life. From every day this man housekeeping to.
+            <p className="mt-3 text-[18px] leading-normal text-slate-600 sm:text-[19px]">
+              At Moral Clean, led by CEO Muhammad Moiz Khan, we provide end-to-end solutions for all your commercial cleaning needs. Backed by industry expertise established in 2007, we offer:
             </p>
 
-            <ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600 sm:text-base">
-              <li>We provide janitorial and specialized services.</li>
-              <li>Constantly evolving and your brand must evolve.</li>
-              <li>Tempor incididunt ut labore dolore magna aliqua.</li>
-              <li>We provide all kind of commercial cleaning equipment.</li>
-              <li>All cleaning chemicals and domestic equipment.</li>
+            <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[17px] leading-normal text-slate-600 sm:text-[18px]">
+              <li>Premium Equipment Supply: A comprehensive range of janitorial and industrial cleaning machines.</li>
+              <li>Authorized Biemmedue Distributor: Proud partners bringing top-tier Italian engineering to Pakistan.</li>
+              <li>Expert Repair Services: Fast, reliable maintenance to keep your machines running flawlessly.</li>
+              <li>Nationwide Reach: A growing network of highly satisfied clients across Pakistan.</li>
             </ul>
           </div>
         </div>

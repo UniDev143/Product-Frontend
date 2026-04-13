@@ -75,7 +75,7 @@ const Navbar = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-                +92-3313195138
+                +92 331 3195138
               </a>
 
               <a
