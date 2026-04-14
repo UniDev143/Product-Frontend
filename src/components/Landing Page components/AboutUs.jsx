@@ -5,11 +5,11 @@ const AboutUs = () => {
   return (
     <section className="w-full bg-[#73c0e9] px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-5 lg:flex-row lg:items-stretch lg:gap-8">
-        <div className="flex w-full justify-center lg:w-[44%] lg:justify-end">
+        <div className="flex w-full items-end justify-center lg:w-[44%] lg:justify-end lg:mb-[-2.5rem]">
           <img
             src={aboutImage}
             alt="About us"
-            className="h-auto w-full max-w-110 object-contain drop-shadow-[0_18px_24px_rgba(0,0,0,0.12)] lg:max-w-none lg:self-end"
+            className="block h-auto w-full max-w-110 object-contain drop-shadow-[0_18px_24px_rgba(0,0,0,0.12)] lg:max-w-none"
           />
         </div>
 

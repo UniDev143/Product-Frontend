@@ -67,13 +67,8 @@ const ContactUs = () => {
           </div>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-700">
-            Have a question or need expert support? Get in touch
-            <br />
-            with our team. We are committed to providing fast,
-            <br />
-            reliable service and high-quality solutions for all your
-            <br />
-            equipment needs.
+            Have a question or need expert support? Get in touch with our team. We are committed to providing fast,
+            reliable service and high-quality solutions for all your equipment needs.
           </p>
 
           <div className="mt-8 space-y-6">
@@ -94,7 +89,7 @@ const ContactUs = () => {
               <div>
                 <h3 className="text-2xl font-extrabold text-black">Location</h3>
                 <p className="mt-1 max-w-xl text-lg leading-7 text-slate-800">
-                  Shop no:01, Plot no: 242, Sector 11-E
+                  Shop no: 01, Plot no: 242, Sector 11-E
                   <br />
                   North Karachi, Karachi
                 </p>
@@ -116,7 +111,7 @@ const ContactUs = () => {
               <div>
                 <h3 className="text-2xl font-extrabold text-black">Email</h3>
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=info@moralclean.com"
+                  href="mailto:info@moralclean.com"
                   target="_blank"
                   rel="noreferrer"
                   className="mt-1 block text-lg text-black transition-opacity hover:opacity-80"
@@ -141,8 +136,8 @@ const ContactUs = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-extrabold text-black">Phone</h3>
-                <a href="tel:+923313195138" className="mt-1 block text-lg text-black transition-opacity hover:opacity-80">
-                  +92 331 3195138
+                <a href="tel:+9233131955138" className="mt-1 block text-lg text-black transition-opacity hover:opacity-80">
+                  +92 331 31955138
                 </a>
               </div>
             </div>
