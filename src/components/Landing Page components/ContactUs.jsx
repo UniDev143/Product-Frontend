@@ -67,9 +67,13 @@ const ContactUs = () => {
           </div>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Have a question or need expert support? Get in touch
             <br />
-            Ut elit tellus, luctus nec ullamcorper mattis, pulvinar
+            with our team. We are committed to providing fast,
+            <br />
+            reliable service and high-quality solutions for all your
+            <br />
+            equipment needs.
           </p>
 
           <div className="mt-8 space-y-6">
@@ -90,9 +94,9 @@ const ContactUs = () => {
               <div>
                 <h3 className="text-2xl font-extrabold text-black">Location</h3>
                 <p className="mt-1 max-w-xl text-lg leading-7 text-slate-800">
-                  No- 6, 1st Floor, Park View center 826 -
+                  Shop no:01, Plot no: 242, Sector 11-E
                   <br />
-                  827, CC Area, Block -2 P.E.C.S.H., Karachi
+                  North Karachi, Karachi
                 </p>
               </div>
             </div>
