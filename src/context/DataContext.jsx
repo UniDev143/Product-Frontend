@@ -8,12 +8,12 @@ const apiClient = axios.create({
 })
 
 const PRODUCT_CATEGORIES = [
-  'Single disk floor scrubbing machine',
-  'janitorial equipments',
-  'floor cleaning chemicals and equipments',
-  'ride on scrubber dryer',
-  'industrial vacumm cleaner',
-  'walk behind scubber dryer',
+  'Single Disk Floor Scrubbing Machine',
+  'Janitorial Equipment',
+  'Floor Cleaning Chemicals and Equipments',
+  'Ride on Scrubber Dryer',
+  'Industrial Vacuum Cleaner',
+  'Walk behind Scrubber Dryer',
 ]
 
 const initialProductFilters = {
