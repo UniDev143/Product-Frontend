@@ -29,12 +29,12 @@ const ProductList = () => {
   const bannerImage = useMemo(() => {
     const bannerByCategory = {
       all: frameBannerImage1,
-      'Single disk floor scrubbing machine': heroBannerImage3,
-      'janitorial equipments': frameBannerImage2,
-      'floor cleaning chemicals and equipments': frameBannerImage3,
-      'ride on scrubber dryer': heroBannerImage,
-      'industrial vacumm cleaner': heroBannerImage2,
-      'walk behind scubber dryer': frameBannerImage1,
+      'Single Disk Floor Scrubbing Machine': heroBannerImage3,
+      'Janitorial Equipment': frameBannerImage2,
+      'Floor Cleaning Chemicals and Equipments': frameBannerImage3,
+      'Ride on Scrubber Dryer': heroBannerImage,
+      'Industrial Vacuum Cleaner': heroBannerImage2,
+      'Walk behind Scrubber Dryer': frameBannerImage1,
     }
 
     return bannerByCategory[productFilters.category] || heroBannerImage
